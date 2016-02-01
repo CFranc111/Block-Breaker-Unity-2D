@@ -61,7 +61,7 @@ public class Ball : MonoBehaviour {
 	//
 	// Nudge the velocity to avoid boring play loops and speed up ball
 	//
-	void VelociNudge (Vector2 exitVelocity) {
+	void VelociNudge(Vector2 exitVelocity) {
 		
 		// Build and apply nudge
 		Vector2 nudge;
@@ -113,7 +113,7 @@ public class Ball : MonoBehaviour {
 	//
 	// When ball exits a collision
 	//
-	void OnCollisionExit2D (Collision2D coll) {
+	void OnCollisionExit2D(Collision2D coll) {
 		
 		if (hasStarted) { // Don't apply at very beginning when ball placed on paddle
 			if (System.Array.IndexOf(makeHitSounds, coll.gameObject.name) > -1) {
@@ -136,5 +136,9 @@ public class Ball : MonoBehaviour {
 			VelociNudge(exitVelocity);
 		}
 
+	}
+	
+	public void ResetBall() {
+		hasStarted = false;
 	}
 }
