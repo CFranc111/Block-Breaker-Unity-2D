@@ -4,6 +4,7 @@ using System.Collections;
 public class Ball : MonoBehaviour {
 
 	public bool debug = false;
+	
 
 	private Paddle paddle;
 	private bool hasStarted = false;
@@ -11,7 +12,7 @@ public class Ball : MonoBehaviour {
 	private Vector3 paddleToBallVector; // Paddle's position minus ball's position
 	private float nudgeFactor = 0.2f; // Max random nudge added to the velocity of each collision (to reduce boring play loops and increase ball speed)
 	private float maxSpeed = 15f;// Magnitude to constrain ball speed
-	private float minSpeed = 5f;
+	private float minSpeed = 7f;
 	
 
 	//
@@ -28,6 +29,8 @@ public class Ball : MonoBehaviour {
 	//
 	void Update () {
 	
+
+	
 		// Reset position if game not yet started
 		if (!hasStarted) {
 		
@@ -39,9 +42,18 @@ public class Ball : MonoBehaviour {
 				hasStarted = true; // Won't run again once one mouse click occurs
 				// Set initial ball velocity
 				this.rigidbody2D.velocity = new Vector2 (2f, 10f); // x, y
+				
+				// Add some spin
+				rigidbody2D.AddTorque(10f);
 			}
 		}
 	}
+	
+	//
+	// Physics timed updates
+	//
+//	void FixedUpdate () {
+//	}
 	
 	//
 	// Generate a random float between zero and the nudgefactor
@@ -134,6 +146,8 @@ public class Ball : MonoBehaviour {
 			
 			// Apply velocity nudge
 			VelociNudge(exitVelocity);
+
+			
 		}
 
 	}
