@@ -29,8 +29,6 @@ public class Ball : MonoBehaviour {
 	//
 	void Update () {
 	
-
-	
 		// Reset position if game not yet started
 		if (!hasStarted) {
 		
@@ -41,10 +39,10 @@ public class Ball : MonoBehaviour {
 			if (Input.GetMouseButtonDown(0)) { 
 				hasStarted = true; // Won't run again once one mouse click occurs
 				// Set initial ball velocity
-				this.rigidbody2D.velocity = new Vector2 (2f, 10f); // x, y
+				this.rigidbody2D.velocity = new Vector2 (0f, 1f); // x, y
 				
 				// Add some spin
-				rigidbody2D.AddTorque(10f);
+//				rigidbody2D.AddTorque(10f);
 			}
 		}
 	}
