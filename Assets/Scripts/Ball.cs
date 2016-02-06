@@ -149,11 +149,11 @@ public class Ball : MonoBehaviour {
 	}
 	
 	public void ResetBall() {
-		// Short delay before resetting ball
-		Invoke ("doReset", 2);
+		// Short delay before reseting ball
+		Invoke ("DoReset", 2);
 	}
 	
-	private void doReset() {
+	private void DoReset() {
 		hasStarted = false;
 	}
 }

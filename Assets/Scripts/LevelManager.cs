@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour {
 	//
 	public void BrickDestroyed() {
 		if(Brick.breakableCount <= 0) {
-			Invoke("LoadNextLevel", 5);
+			LoadNextLevel();
 		}
 	}
 }
