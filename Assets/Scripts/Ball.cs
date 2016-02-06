@@ -4,7 +4,6 @@ using System.Collections;
 public class Ball : MonoBehaviour {
 
 	public bool debug = false;
-	
 
 	private Paddle paddle;
 	private bool hasStarted = false;
@@ -13,7 +12,6 @@ public class Ball : MonoBehaviour {
 	private float nudgeFactor = 0.2f; // Max random nudge added to the velocity of each collision (to reduce boring play loops and increase ball speed)
 	private float maxSpeed = 15f;// Magnitude to constrain ball speed
 	private float minSpeed = 7f;
-	
 
 	//
 	// Initialization
@@ -46,12 +44,6 @@ public class Ball : MonoBehaviour {
 			}
 		}
 	}
-	
-	//
-	// Physics timed updates
-	//
-//	void FixedUpdate () {
-//	}
 	
 	//
 	// Generate a random float between zero and the nudgefactor
@@ -126,16 +118,23 @@ public class Ball : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D coll) {
 		
 		if (hasStarted) { // Don't apply at very beginning when ball placed on paddle
+		
 			if (System.Array.IndexOf(makeHitSounds, coll.gameObject.name) > -1) {
 				audio.Play(); // Play basic hit sound if appropriate
 			}
 			
 			// Get the ball's outbound velocity
 			Vector2 exitVelocity = BallVelocity();
-						
+			
+			// Set up ball to nudge more upward if it hits wall very close to paddle (experimental)
+			if (transform.position.y < 2f) {
+				exitVelocity.y += 5f;
+			}
+			
 			// Reset magnitude if ball gets too fast or too slow
 			if (debug) print("Magnitude: " + this.rigidbody2D.velocity.magnitude);
 			
+			// Speed check
 			if (exitVelocity.magnitude > maxSpeed) {
 				this.rigidbody2D.velocity = exitVelocity = this.rigidbody2D.velocity.normalized * maxSpeed; // normalize = make magnitude 1
 			} else if (exitVelocity.magnitude < minSpeed) {
@@ -144,9 +143,8 @@ public class Ball : MonoBehaviour {
 			
 			// Apply velocity nudge
 			VelociNudge(exitVelocity);
-
 			
-		}
+		} // /if hasStarted
 
 	}
 	
