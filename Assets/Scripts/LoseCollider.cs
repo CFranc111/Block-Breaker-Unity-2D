@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LoseCollider : MonoBehaviour {
 
+	
 	private LevelManager levelManager;
 	private Ball ball;
 	public int livesLeft = 3;
@@ -30,6 +31,7 @@ public class LoseCollider : MonoBehaviour {
 		} else {
 			ball = GameObject.FindObjectOfType<Ball>(); // The current ball instance
 			ball.ResetBall();
+			
 		}
 	
 	}

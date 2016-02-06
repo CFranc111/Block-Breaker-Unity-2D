@@ -11,13 +11,6 @@ public class LevelManager : MonoBehaviour {
 		Application.LoadLevel(name);
 	}
 	
-	// 
-	// Quite game
-	//
-	public void QuitRequest() {
-		Application.Quit();
-	}
-	
 	//
 	// Load next level
 	//
@@ -31,7 +24,7 @@ public class LevelManager : MonoBehaviour {
 	//
 	public void BrickDestroyed() {
 		if(Brick.breakableCount <= 0) {
-			LoadNextLevel();
+			Invoke("LoadNextLevel", 5);
 		}
 	}
 }
