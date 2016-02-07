@@ -8,7 +8,7 @@ public class LoseCollider : MonoBehaviour {
 	private LevelManager levelManager;
 	private TextController textController;
 	private Ball ball;
-	public static int totalLives = 5;
+	public static int totalLives = 1;
 	private int livesLeft;
 	public bool debug = true;
 	
