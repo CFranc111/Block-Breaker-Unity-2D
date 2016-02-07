@@ -17,7 +17,6 @@ public class LoseCollider : MonoBehaviour {
 	//
 	void Start () {
 		livesLeft = totalLives;
-//		loseLife = GetComponent<AudioSource>();
 		
 		// Link the level mgr 
 		levelManager = Object.FindObjectOfType<LevelManager>();	

@@ -4,6 +4,7 @@ using System.Collections;
 public class Ball : MonoBehaviour {
 
 	public bool debug = false;
+	public AudioClip respawnClip;
 
 	private Paddle paddle;
 	private bool hasStarted = false;
@@ -152,5 +153,6 @@ public class Ball : MonoBehaviour {
 	
 	private void DoReset() {
 		hasStarted = false;
+		AudioSource.PlayClipAtPoint (respawnClip, transform.position);
 	}
 }
