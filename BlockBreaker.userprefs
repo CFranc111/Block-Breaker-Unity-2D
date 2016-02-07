@@ -1,16 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Camera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TextController.cs">
     <Files>
-      <File FileName="Assets\Scripts\LevelManager.cs" Line="4" Column="44" />
-      <File FileName="Assets\Scripts\Ball.cs" Line="130" Column="4" />
-      <File FileName="Assets\Scripts\MusicPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LoseCollider.cs" Line="17" Column="25" />
-      <File FileName="Assets\Scripts\Paddle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Brick.cs" Line="12" Column="36" />
-      <File FileName="Assets\Scripts\Camera.cs" Line="26" Column="37" />
-      <File FileName="Assets\Scripts\DragPanel.cs" Line="50" Column="3" />
-      <File FileName="Assets\Scripts\TextController.cs" Line="11" Column="2" />
+      <File FileName="c:\Users\Chris\Dropbox\Main\Repos\Unity\BlockBreaker\Assets\Scripts\LoseCollider.cs" Line="16" Column="17" />
+      <File FileName="Assets\Scripts\TextController.cs" Line="39" Column="27" />
+      <File FileName="Assets\Scripts\LevelManager.cs" Line="32" Column="32" />
+      <File FileName="Assets\Scripts\Ball.cs" Line="21" Column="69" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

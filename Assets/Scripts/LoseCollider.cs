@@ -7,13 +7,16 @@ public class LoseCollider : MonoBehaviour {
 	private LevelManager levelManager;
 	private TextController textController;
 	private Ball ball;
-	public int livesLeft = 3;
+	public static int totalLives = 5;
+	private int livesLeft;
 	public bool debug = true;
 	
 	//
 	// Initialize
 	//
 	void Start () {
+		livesLeft = totalLives;
+		
 		// Link the level mgr 
 		levelManager = Object.FindObjectOfType<LevelManager>();	
 		textController = GameObject.FindObjectOfType<TextController>();
@@ -30,7 +33,7 @@ public class LoseCollider : MonoBehaviour {
 		if (livesLeft > 0) {
 			livesLeft--;
 //			camera.LoseLifeBg();
-			textController.SetLivesText(livesLeft);
+			textController.SetLivesText(livesLeft, totalLives);
 			if (debug) Debug.Log ("Lives left: " + livesLeft);
 		} 
 		
