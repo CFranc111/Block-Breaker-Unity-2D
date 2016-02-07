@@ -4,6 +4,7 @@ using System.Collections;
 public class LoseCollider : MonoBehaviour {
 
 //	private Camera camera;
+	public AudioClip loseLife;
 	private LevelManager levelManager;
 	private TextController textController;
 	private Ball ball;
@@ -16,6 +17,7 @@ public class LoseCollider : MonoBehaviour {
 	//
 	void Start () {
 		livesLeft = totalLives;
+//		loseLife = GetComponent<AudioSource>();
 		
 		// Link the level mgr 
 		levelManager = Object.FindObjectOfType<LevelManager>();	
@@ -31,6 +33,7 @@ public class LoseCollider : MonoBehaviour {
 	
 		// Lose a life
 		if (livesLeft > 0) {
+			AudioSource.PlayClipAtPoint (loseLife, transform.position);
 			livesLeft--;
 //			camera.LoseLifeBg();
 			textController.SetLivesText(livesLeft, totalLives);
@@ -38,7 +41,7 @@ public class LoseCollider : MonoBehaviour {
 		} 
 		
 		// Handle game lost
-		if (livesLeft == 0) {
+		if (livesLeft == 0) { 
 			Invoke("gameOver", 1);
 		} else {
 			ball = GameObject.FindObjectOfType<Ball>(); // The current ball instance

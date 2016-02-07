@@ -1,11 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TextController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LoseCollider.cs">
     <Files>
-      <File FileName="c:\Users\Chris\Dropbox\Main\Repos\Unity\BlockBreaker\Assets\Scripts\LoseCollider.cs" Line="16" Column="17" />
-      <File FileName="Assets\Scripts\TextController.cs" Line="39" Column="27" />
-      <File FileName="Assets\Scripts\LevelManager.cs" Line="32" Column="32" />
-      <File FileName="Assets\Scripts\Ball.cs" Line="21" Column="69" />
+      <File FileName="Assets\Scripts\TextController.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\LoseCollider.cs" Line="19" Column="3" />
+      <File FileName="Assets\Scripts\LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Brick.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
