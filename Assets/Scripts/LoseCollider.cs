@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LoseCollider : MonoBehaviour {
 
-	private Camera camera;
+//	private Camera camera;
 	private LevelManager levelManager;
 	private TextController textController;
 	private Ball ball;
@@ -18,7 +18,7 @@ public class LoseCollider : MonoBehaviour {
 		levelManager = Object.FindObjectOfType<LevelManager>();	
 		textController = GameObject.FindObjectOfType<TextController>();
 		
-		camera = Object.FindObjectOfType<Camera>();	
+//		camera = Object.FindObjectOfType<Camera>();	
 	}
 
 	//
@@ -29,7 +29,7 @@ public class LoseCollider : MonoBehaviour {
 		// Lose a life
 		if (livesLeft > 0) {
 			livesLeft--;
-			camera.LoseLifeBg();
+//			camera.LoseLifeBg();
 			textController.SetLivesText(livesLeft);
 			if (debug) Debug.Log ("Lives left: " + livesLeft);
 		} 
