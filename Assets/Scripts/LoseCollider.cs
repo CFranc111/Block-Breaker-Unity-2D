@@ -14,9 +14,10 @@ public class LoseCollider : MonoBehaviour {
 	// Initialize
 	//
 	void Start () {
-		// Link the level mgr with the lose collider
+		// Link the level mgr 
 		levelManager = Object.FindObjectOfType<LevelManager>();	
 		textController = GameObject.FindObjectOfType<TextController>();
+		
 		camera = Object.FindObjectOfType<Camera>();	
 	}
 

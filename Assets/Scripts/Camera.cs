@@ -18,8 +18,7 @@ public class Camera : MonoBehaviour {
 	
 	public void LoseLifeBg () {
 		// Change background color
-		float t = Mathf.PingPong(Time.time, duration) / duration;
-		camera.backgroundColor = Color.Lerp(bgColor1, bgColor2, t);
+		camera.backgroundColor = bgColor2;
 		Invoke ("ResetBgColor", 1);
 	}
 	

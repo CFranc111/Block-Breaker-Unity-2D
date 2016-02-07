@@ -38,9 +38,6 @@ public class Ball : MonoBehaviour {
 				hasStarted = true; // Won't run again once one mouse click occurs
 				// Set initial ball velocity
 				this.rigidbody2D.velocity = new Vector2 (0f, 1f); // x, y
-				
-				// Add some spin
-//				rigidbody2D.AddTorque(10f);
 			}
 		}
 	}
