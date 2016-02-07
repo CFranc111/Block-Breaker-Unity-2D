@@ -36,11 +36,15 @@ public class LoseCollider : MonoBehaviour {
 		
 		// Handle game lost
 		if (livesLeft == 0) {
-			levelManager.LoadLevel("Lose");	
+			Invoke("gameOver", 1);
 		} else {
 			ball = GameObject.FindObjectOfType<Ball>(); // The current ball instance
 			ball.ResetBall();
 		}
 	
+	}
+	
+	void gameOver () {
+		levelManager.LoadLevel("Lose");	
 	}
 }
