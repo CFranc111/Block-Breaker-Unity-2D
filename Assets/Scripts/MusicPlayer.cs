@@ -4,12 +4,19 @@ using System.Collections;
 public class MusicPlayer : MonoBehaviour {
 
 	static MusicPlayer instance = null; // Init as no MusicPlayer // This is an example of a singleton pattern.
+	private WinMusic winMusic;
 	
 	// 
 	// Before start
 	//
 	void Awake () {
 		Debug.Log ("Music player Awake " + GetInstanceID());
+		
+		// Kill win music if player navigates from the win screen
+		winMusic = GameObject.FindObjectOfType<WinMusic>();
+		AudioSource clip = winMusic.audio;
+		clip.Stop();
+		print ("clip playing?: " + clip.isPlaying);
 		
 		// Keep multiple instances of music player from starting up
 		if (instance != null) { // If a MusicPlayer instance exists

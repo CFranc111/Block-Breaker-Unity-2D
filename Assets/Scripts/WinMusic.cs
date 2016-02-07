@@ -1,4 +1,4 @@
-﻿// Script courtesy of Tuncer @answers.unity3d.com
+﻿// Script adapted from solution by Tuncer @answers.unity3d.com
 using UnityEngine;
 using System.Collections;
 
@@ -9,8 +9,8 @@ public class WinMusic : MonoBehaviour {
 		
 		void Start()
 		{
-			GetComponent<AudioSource>().loop = true;
 			StartCoroutine(playClips());
+			GameObject.DontDestroyOnLoad(gameObject);
 		}
 		
 		IEnumerator playClips()
@@ -20,5 +20,6 @@ public class WinMusic : MonoBehaviour {
 			yield return new WaitForSeconds(audio.clip.length);
 			audio.clip = bgLoopClip;
 			audio.Play();
+			audio.loop = true;
 		}
 }
