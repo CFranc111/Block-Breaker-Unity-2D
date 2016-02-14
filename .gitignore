@@ -3,3 +3,8 @@ Assets/Sounds
 Assets/dumpster
 Assets/Fonts
 Temp/
+
+**/*.sln
+**/*.sublime-workspace
+**/*.sublime-project
+**/*.csproj
