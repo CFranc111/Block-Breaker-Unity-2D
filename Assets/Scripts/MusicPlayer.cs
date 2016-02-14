@@ -14,9 +14,13 @@ public class MusicPlayer : MonoBehaviour {
 		
 		// Kill win music if player navigates from the win screen
 		winMusic = GameObject.FindObjectOfType<WinMusic>();
-		AudioSource clip = winMusic.audio;
-		clip.Stop();
-		print ("clip playing?: " + clip.isPlaying);
+        AudioSource clip;
+        if (winMusic) {
+            clip = winMusic.audio;
+            clip.Stop();
+        };
+	
+
 		
 		// Keep multiple instances of music player from starting up
 		if (instance != null) { // If a MusicPlayer instance exists
@@ -24,7 +28,7 @@ public class MusicPlayer : MonoBehaviour {
 			print ("Duplicate music player destructed.");
 		} else { // Claim current MusicPlayer -> Only triggered the first time this script runs.
 			instance = this; // this = the class level instance of MusicPlayer
-			GameObject.DontDestroyOnLoad(gameObject); // Arg is instance of the music player object - Make music persist through level change.
+			//GameObject.DontDestroyOnLoad(gameObject); // Arg is instance of the music player object - Make music persist through level change.
 		}
 	}
 
